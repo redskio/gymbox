@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>짐박스 앱 다운로드</title>
+  <meta name="description" content="짐박스 — 내가 찾던 진정한 헬스장. iOS / Android 앱 다운로드." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="짐박스 앱 다운로드" />
+  <meta property="og:description" content="QR을 스캔한 OS에 맞는 스토어로 자동 이동합니다." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://redskio.github.io/gymbox/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23000'/%3E%3Ctext x='50' y='62' font-size='52' text-anchor='middle' fill='%23fff' font-family='system-ui,sans-serif' font-weight='800'%3EG%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root{
+      --bg:#1a1a1a;          /* gymboxx brand dark */
+      --card:#222224;
+      --fg:#ffffff;
+      --muted:#a1a1aa;
+      --accent:#ff2528;      /* gymboxx brand red */
+      --accent-press:#d91a1d;
+      --border:#2e2e32;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Pretendard","Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;gap:24px}
+    .brand{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+    .logo{width:72px;height:72px;border-radius:18px;background:#1a1a1a;display:grid;place-items:center;font-weight:900;font-size:36px;letter-spacing:-1px;color:var(--accent);border:1px solid #1a1a1a}
+    h1{font-size:22px;margin:0;font-weight:800;letter-spacing:-0.4px}
+    p.sub{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+    .card{width:100%;max-width:420px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px}
+    .row{display:flex;gap:10px;flex-direction:column}
+    a.btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 16px;border-radius:14px;text-decoration:none;font-weight:700;font-size:15px;border:1px solid var(--border);transition:transform .08s ease, background .15s ease}
+    a.btn:active{transform:scale(0.98)}
+    a.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 6px 18px rgba(255,37,40,0.25)}
+    a.btn.primary:active{background:var(--accent-press);border-color:var(--accent-press)}
+    a.btn.secondary{background:#1d1d20;color:#fff}
+    .status{font-size:13px;color:var(--muted);text-align:center;min-height:18px}
+    .footer{font-size:12px;color:#6b6b73;text-align:center;line-height:1.6}
+    .icon{width:18px;height:18px;flex:0 0 18px}
+    .spinner{width:18px;height:18px;border-radius:50%;border:2px solid #2a2a2e;border-top-color:#fff;animation:spin .9s linear infinite;display:inline-block;vertical-align:middle;margin-right:8px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .hide{display:none !important}
+    @media (prefers-color-scheme: light){
+      :root{--bg:#fafafa;--card:#ffffff;--fg:#0b0b0c;--muted:#52525b;--border:#e4e4e7}
+      a.btn.secondary{background:#f4f4f5;color:#0b0b0c;border-color:#e4e4e7}
+      .logo{background:#1a1a1a;color:var(--accent);border-color:#1a1a1a}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="brand">
+      <div class="logo" aria-hidden="true">G</div>
+      <h1>짐박스 앱 다운로드</h1>
+      <p class="sub">OS에 맞는 스토어로 안내해 드릴게요.</p>
+    </section>
+
+    <section class="card" aria-live="polite">
+      <div id="status" class="status"><span class="spinner"></span>OS를 확인하고 있어요…</div>
+      <div id="choices" class="row hide">
+        <a id="ios" class="btn primary" href="https://apps.apple.com/kr/app/%EC%A7%90%EB%B0%95%EC%8A%A4-%EB%82%B4%EA%B0%80-%EC%B0%BE%EB%8D%98-%EC%A7%84%EC%A0%95%ED%95%9C-%ED%97%AC%EC%8A%A4%EC%9E%A5/id1603180638" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.46 2.226-1.21 3.02-.806.857-2.13 1.516-3.213 1.43-.143-1.114.42-2.276 1.16-3.07.83-.892 2.244-1.55 3.263-1.38zM20.5 17.27c-.56 1.293-.83 1.87-1.55 3.013-1.005 1.59-2.42 3.57-4.18 3.586-1.564.014-1.967-1.018-4.09-1.006-2.123.012-2.566 1.024-4.13 1.01-1.76-.016-3.1-1.804-4.105-3.394C-.34 17.42-.62 13.99.46 11.83c.77-1.54 1.99-2.515 3.13-2.515 1.16 0 1.89.64 2.85.64.93 0 1.5-.642 2.84-.642 1.01 0 2.08.55 2.84 1.5-2.5 1.37-2.09 4.94.38 6.456z"/></svg>
+          App Store에서 받기
+        </a>
+        <a id="android" class="btn primary" href="https://play.google.com/store/apps/details?id=com.supplies.gymboxx.userclient" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3.5v17c0 .6.7 1 1.2.6L19 13.1c.5-.4.5-1.2 0-1.6L6.2 2.9C5.7 2.5 5 2.9 5 3.5z"/></svg>
+          Google Play에서 받기
+        </a>
+        <a class="btn secondary" href="https://gymboxx.com" rel="noopener">
+          짐박스 공식 홈페이지
+        </a>
+      </div>
+    </section>
+
+    <p class="footer">© 짐박스 · 자동 이동되지 않으면 위 버튼으로 이동해 주세요.</p>
+  </main>
+
+  <script>
+  (function(){
+    var IOS_URL     = "https://apps.apple.com/kr/app/%EC%A7%90%EB%B0%95%EC%8A%A4-%EB%82%B4%EA%B0%80-%EC%B0%BE%EB%8D%98-%EC%A7%84%EC%A0%95%ED%95%9C-%ED%97%AC%EC%8A%A4%EC%9E%A5/id1603180638";
+    var ANDROID_URL = "https://play.google.com/store/apps/details?id=com.supplies.gymboxx.userclient";
+
+    var ua = navigator.userAgent || navigator.vendor || window.opera || "";
+    var platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+
+    function isAndroid(){ return /android/i.test(ua); }
+    function isIOS(){
+      // iPadOS 13+ reports as MacIntel; check touch points to disambiguate.
+      if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) return true;
+      if (platform === "MacIntel" && navigator.maxTouchPoints > 1) return true;
+      return false;
+    }
+    function isHarmony(){ return /HarmonyOS|HUAWEI/i.test(ua); }
+    function isKaiOS(){ return /KAIOS/i.test(ua); }
+
+    var status = document.getElementById("status");
+    var choices = document.getElementById("choices");
+
+    function showChoices(msg){
+      status.textContent = msg || "스토어를 선택해 주세요.";
+      choices.classList.remove("hide");
+    }
+
+    function go(url, label){
+      status.innerHTML = '<span class="spinner"></span>' + label + ' 스토어로 이동 중…';
+      // Reveal choices anyway as a fallback if redirect is blocked.
+      setTimeout(function(){ showChoices(label + ' 스토어가 열리지 않았다면 아래 버튼을 눌러주세요.'); }, 1500);
+      // Use replace so the back button returns to the referrer, not this page.
+      try { window.location.replace(url); }
+      catch(e){ window.location.href = url; }
+    }
+
+    if (isIOS()) {
+      go(IOS_URL, "App Store");
+    } else if (isAndroid()) {
+      go(ANDROID_URL, "Google Play");
+    } else if (isHarmony()) {
+      // Huawei devices without Google Play — show choices.
+      showChoices("HarmonyOS 기기로 보입니다. 적합한 스토어를 선택해 주세요.");
+    } else if (isKaiOS()) {
+      showChoices("이 기기는 짐박스 앱을 지원하지 않을 수 있어요.");
+    } else {
+      // Desktop / unknown — give the user both options.
+      showChoices("데스크톱에서 열렸어요. 받을 스토어를 선택해 주세요.");
+    }
+  })();
+  </script>
+</body>
+</html>
